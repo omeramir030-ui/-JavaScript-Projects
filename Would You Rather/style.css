@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+	color: #18252a;
+	background: #f4efe6;
+	font-family: 'DM Sans', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	display: grid;
+	place-items: center;
+	background: radial-gradient(circle at 15% 15%, #f9d7a8 0, transparent 30%), #f4efe6;
+}
+
+.game-shell {
+	width: min(100% - 2rem, 900px);
+	padding: 3rem 0;
+}
+
+.eyebrow {
+	margin: 0 0 .6rem;
+	color: #d35d43;
+	font-size: .78rem;
+	font-weight: 700;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+}
+
+h1, h2 { font-family: 'Space Grotesk', sans-serif; }
+h1 { max-width: 600px; margin: 0 0 2.5rem; font-size: clamp(3rem, 9vw, 6.5rem); line-height: .9; letter-spacing: 0; }
+h2 { margin: 2.5rem 0 1.5rem; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.05; }
+
+.game-screen, .results-screen { padding: 1.5rem 0; }
+.progress-row { display: flex; justify-content: space-between; color: #5e6c70; font-size: .85rem; font-weight: 700; }
+.progress-track { height: 8px; margin-top: .75rem; overflow: hidden; background: #ded8cc; border-radius: 8px; }
+.progress-bar { width: 0; height: 100%; background: #d35d43; transition: width .3s ease; }
+.options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.option { min-height: 210px; padding: 1.5rem; border: 2px solid #18252a; border-radius: 8px; color: #18252a; cursor: pointer; text-align: left; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+.option:hover, .option:focus-visible { transform: translateY(-5px); box-shadow: 7px 7px 0 #18252a; outline: none; }
+.option-a { background: #a8d8d0; }
+.option-b { background: #f2bd75; }
+.option-label { display: block; margin-bottom: 3rem; font-family: 'Space Grotesk', sans-serif; font-size: 2rem; }
+.option span:last-child { display: block; font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.2rem, 3vw, 1.8rem); font-weight: 700; }
+.option.selected { background: #fffaf1; }
+.option:disabled { cursor: default; }
+.restart-button { padding: .9rem 1.2rem; border: 2px solid #18252a; border-radius: 8px; background: #d35d43; color: #fffaf1; font: inherit; font-weight: 700; cursor: pointer; }
+.restart-button:hover, .restart-button:focus-visible { box-shadow: 5px 5px 0 #18252a; outline: none; }
+
+@media (max-width: 620px) {
+	.game-shell { padding: 2rem 0; }
+	h1 { margin-bottom: 1.5rem; }
+	h2 { margin-top: 2rem; }
+	.options { grid-template-columns: 1fr; }
+	.option { min-height: 145px; }
+	.option-label { margin-bottom: 1.25rem; }
+}
