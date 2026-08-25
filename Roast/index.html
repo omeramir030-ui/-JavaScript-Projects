@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Court</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+    <div class="case-header">
+      <div class="case-number">Case No. CC-<span id="caseNum">0001</span> — In the Matter of Your Code</div>
+      <h1>Code Court</h1>
+      <p class="subtitle">Submit your evidence. The court does not go easy.</p>
+    </div>
+
+    <div class="body-area">
+      <label class="field-label" for="codeInput">Exhibit A — Submitted Code</label>
+      <textarea id="codeInput" placeholder="Paste your questionable code here..."></textarea>
+
+      <div class="file-row">
+        <span>or enter as file evidence:</span>
+        <input type="file" id="fileInput" accept=".js,.py,.txt,.html,.css,.java,.c,.cpp,.ts">
+      </div>
+
+      <button id="roastBtn">Deliver Verdict</button>
+
+      <div class="verdict-wrap">
+        <div class="stamp" id="stamp">Guilty</div>
+        <div id="output"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
